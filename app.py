@@ -65,8 +65,8 @@ Operators & Operands:
         +(add)
         -(minus) 
         /(division)
-        //(floor division)
         *(multiplication)
+        //(floor division)
         **(power) 
         %(modulus)
 """
@@ -76,7 +76,7 @@ numberTwo = 20
 # numberTwo = 3 # overrided the value of numberTwo
 
 output  = numberOne + numberTwo # addition 
-output  = numberOne + numberTwo # addition
+output  = numberOne - numberTwo # subraction
 output  = numberOne / numberTwo # division
 output  = numberOne // numberTwo # floor division => truncates
 output  = numberOne * numberTwo # mulitiplication
@@ -108,7 +108,10 @@ output = numberThree < numberFour # check for whether numberThree is less than n
 output = numberThree <= numberFour # check for whether numberThree is less than or equal to numberFour
 output = numberThree >= numberFour # check for whether numberThree is greater than or equal to numberFour
 
-# BOOLEAN OPERATORS: and, or, not
+# BOOLEAN OPERATORS: and, or, not (TRUTH TABLE)
+isRaining = True
+areLightsOn = False
+
 age = 18
 height = 150
 
@@ -123,6 +126,8 @@ numberOne = 10
 numberTwo = 11
 
 output = numberOne + numberTwo
+numberOne += numberTwo
+output = numberOne
 # numberOne += numberTwo
 # numberOne *= numberTwo
 # numberOne /= numberTwo
@@ -133,14 +138,18 @@ i = 0
 # i+=1
 
 # identity(is ... is not ) & membership(in) operators
-fruits = ['mangoe','banana','apple', 'watermelons']
+# fruits = ['mangoe','banana','apple', 'watermelons']
 
-output = 'apple' in fruits
+# output = 'apple' in fruits
 
 # STRINGS: str() => placed inbetween '' or ""
-name = "John-Doe"
+name = "John Doe"
+name = "Tonny's"
+
+# mulitiline string
 bio = """
-My name is JOhn Doe, I am a data scientist based in Kenya focusing on Health-care analytics.
+My name is JOhn Doe, I am a data scientist based in Kenya focusing
+ on Health-care analytics.
 My core tools of trade are  Python,  Streamlit, Pandas and Colan
 """
 
@@ -153,13 +162,176 @@ output = name[0:6] # slicing
 output = name[2:8]
 output= name[-1:]
 output= name[4:]
-name = "John Doe" # instance of the string class
-output = name[0:8:2] # slicing with a step or 2
+name = "John Doe" # instance of the string class 
+output = name[0:8:2] # slicing with a step or 2 => Jh oe
 
 # strings methods
 output = name.upper()
 output = name.lower()
 output = name.replace('o','u')
+
+
+ten ="10"
+output = int(ten) 
+output = type(int(ten))
+
+name = "John Wick Doe"
+output = len(name)
+output=  name[12]
+name = "John Doe" # instance of the string class 
+output = name[0:8:1] # slicing with a step or 2 => Jh oe
+
+
+
+output = "Hello WORLD!! "
+output = id(output) # represents memory locatoin
+
+
+"""
+CONTROL FLOWS: 
+    - if...else
+    - ternary operatot
+    - match
+    - if ... elif ... else
+
+note: code is grouped using indentation
+
+"""
+
+# if...else
+
+age = 10
+year = 2026
+
+if age>18:
+    output = "Go vote"
+
+if (age > 18): 
+    output = "Go Vote!"
+else: 
+    output = "Smile!"
+
+# ternary operator
+output  = "Go vote" if age >18 else "smile"
+
+if age > 18:
+    output = "Go vote!" 
+else:
+    output = "you can go home and have ice cream"
+
+
+if (age <= 10)  or (year == 2025): 
+    output = "Go and learn graphic design"
+else: 
+    output = "Go read!"
+
+
+shoeColor = "green"
+pantsColor = "black"
+
+# if ... elif ... else
+if (shoeColor == "black") and (pantsColor == "yellow"):
+    output = "We are not looking for balck yellow color!"
+
+elif (shoeColor == "yellow") and (pantsColor == "purple"):
+    output = "Oii! this is not right!!"
+
+elif (shoeColor == "blue") and (pantsColor == "white"):
+    output = "This is nice but not today!"
+
+else: 
+    output =" Oi!! you can go back home!"
+
+color = "magenta"
+
+# match case
+match(color):
+    case "blue":
+        output = "Blue looks good!"
+    case "yellow":
+        output = "Yellow is bright that is fun"
+    case "green":
+        output = "Green is for prosperity we need that!"
+    case _:
+        output = "Colors are quite confusing!"
+
+
+# iterations (for loop, while loop, range())
+name = "Spider Woman" # strings are IMMUTABLE lists
+
+#  for loop
+for l in name:
+    # if l.lower() == "s":
+    #     break # stops the loop
+    if l == "p":
+        continue # skip that scenario
+    # print(l)
+
+for num in range(3, 11):
+    # print(num)
+    if num == 4:
+        continue # skipped 
+    if num == 8:
+        break # stopped
+
+# while loops
+
+start = 10
+stop = 20
+
+while (start < stop):
+    # print(start)
+    start +=1
+
+# Python Data structure (List, Tuple, set,Dict) 
+
+# lists => mutable collection of items or rather elments(you can have more htan one data type in a list)
+fruits = ["apples", "bananas", "mangos","pineapples","kiwi"]
+grandmasGarden = ["potatoes", "cabbages", "mangoes", "tomatoes"]
+
+output = fruits
+output = fruits[2]
+output = fruits[1:4] # slicing 
+fruits.append("watermelon")
+fruits.pop()
+fruits.insert(0,"tomatoe")
+fruits.insert(len(fruits),"passion")
+fruits.insert(len(fruits),"avocado")
+fruits.remove("avocado")
+fruits.pop(3)
+fruits.insert(len(fruits),"passion")
+fruits.insert(len(fruits),"passion")
+fruits.insert(len(fruits),"passion")
+
+fruits = fruits + grandmasGarden # concetation of lists
+
+output = fruits.count("passion")
+
+fruits[0] = "onions"
+output = fruits
+
+# for fruit in fruits:
+#     print(fruit)
+
+
+#  tuples : immutable
+
+colors = ("blue","green", "yellow")
+
+output = colors
+output = type(colors)
+# colors[0] = "red" # tuple is immutable 
+output = colors
+
+# dictionary
+person = {
+    "name": "Maria Martha",
+    "age":12,
+    "hobbies":["drawing","music", "dancing","reading"],
+}
+
+output = person["age"]
+
 
 
 print("===============================")
