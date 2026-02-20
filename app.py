@@ -190,8 +190,8 @@ output = id(output) # represents memory locatoin
 """
 CONTROL FLOWS: 
     - if...else
-    - ternary operatot
-    - match
+    - ternary operator
+    - match..case
     - if ... elif ... else
 
 note: code is grouped using indentation
@@ -292,9 +292,11 @@ grandmasGarden = ["potatoes", "cabbages", "mangoes", "tomatoes"]
 output = fruits
 output = fruits[2]
 output = fruits[1:4] # slicing 
-fruits.append("watermelon")
-fruits.pop()
-fruits.insert(0,"tomatoe")
+
+#  list methods
+fruits.append("watermelon") # adding an element at the end
+fruits.pop() # delete/ remove the last element
+fruits.insert(0,"tomatoe") # inserting an eement at a particular postion
 fruits.insert(len(fruits),"passion")
 fruits.insert(len(fruits),"avocado")
 fruits.remove("avocado")
@@ -303,9 +305,9 @@ fruits.insert(len(fruits),"passion")
 fruits.insert(len(fruits),"passion")
 fruits.insert(len(fruits),"passion")
 
-fruits = fruits + grandmasGarden # concetation of lists
+fruits = fruits + grandmasGarden # concatenation of lists
 
-output = fruits.count("passion")
+output = fruits.count("passion") # frequences
 
 fruits[0] = "onions"
 output = fruits
@@ -315,7 +317,6 @@ output = fruits
 
 
 #  tuples : immutable
-
 colors = ("blue","green", "yellow")
 
 output = colors
@@ -323,7 +324,7 @@ output = type(colors)
 # colors[0] = "red" # tuple is immutable 
 output = colors
 
-# dictionary
+# dictionary => Hashmaps
 person = {
     "name": "Maria Martha",
     "age":12,
@@ -331,6 +332,68 @@ person = {
 }
 
 output = person["age"]
+
+# output = person.clear() # delete data
+output = person.get("name") # equals: person["name"]
+output = person.items()
+
+# fruits = ["apples", "apples", "apples", "apples", "apples", "bananas", "bananas", "bananas", "mangos","mangos","mangos","mangos","mangos","pineapples","kiwi"]
+# output = set(fruits)
+
+
+"""
+FUNCTIONS: 
+    - a group of statements that run to achieve a particular goal
+    - types: 
+         - parametrized
+         - non-parameterized
+         - lambda (anonymous)
+"""
+
+# non- pramameterized functoin: 
+output = "" # global variable
+def greetings():
+    output = "Good morning!" # local variable 
+    # print()
+
+greetings()
+
+# parameterized functions
+def welcomeHome(name):
+    print("Welcome home "+name)
+
+welcomeHome("John Doe")
+
+def morningGreetings(name):
+    return f"Good Morning {name}!"
+
+def authenticateWithToken():
+    pass
+
+output = morningGreetings("Mary Jane")
+
+name = "Peter Parker"
+# name[0] = "R" 
+
+def replaceItem(listOfItems ,indexOfElement, replacementElement):
+    name = listOfItems
+    finalitems =""
+
+    try: 
+        name[indexOfElement] = replacementElement
+        finalitems = name
+    except TypeError: 
+        finalitems = "Something went wrong!"
+
+    return finalitems
+
+output = replaceItem(name, 0, "W")
+
+# lambda function => anonymous function
+# lambda arguments : expression
+x = lambda a,b,c: a+b*c
+
+output = x(10,12, 2)
 
 
 
