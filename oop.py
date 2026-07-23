@@ -29,8 +29,8 @@ class Bottle:
 
 
 #  creating the objects
-sodaBottle = Bottle(1000, "blue","glass", "Coca-cola")
 sodaBottle2 = Bottle(800, "black", "aluminium", "Pepsi")
+sodaBottle = Bottle(1000, "blue","glass", "Coca-cola")
 # print(sodaBottle.shape)
 # sodaBottle.checkTemperature()
 # sodaBottle.getBrandName()
